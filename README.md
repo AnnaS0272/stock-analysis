@@ -17,7 +17,7 @@ Dim tickers(12) As String
     tickers(11) = "VSLR"
  ```
 
-The search was constructed with a nested `For` loop. The outer `For` loop was going through each stock, passing it into inner `For` loop and testing it through all the rows of a dataset, assigning appropriate variables back into the single dimension array if conditions were satisfied.
+The search was constructed with a nested `For` loop. The outer `For` loop was going through each ticker, passing it into the inner `For` loop which was testing the ticker through all the rows of the dataset, assigning appropriate variables back into the single dimension array if conditions were satisfied.
 
 ```
 For I = 0 To 11
