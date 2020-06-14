@@ -41,7 +41,7 @@ For I = 0 To 11
 
 In terms on efficiency and number of operations, it is proportional to the **"number of stocks" x "number of rows"** in a data set. In this case, it was **"12" x "3012" = 36,156 operations.**
 
-Since Steve wanted to do a little more research for his parents and was gathering data for the entire stock market over the last few years, we needed to refactor the intial code. Since we assumed that there is an unknown number of stocks, the previous code which had a defined array and looped over a number of stocks is no longer valid. Therefore, first of all we had to initiate a dynamic array `As Variant` type because the final number of stocks is not known, although we do know that ultimately we need to include four variables/dimensions into it (stock, opening price, closing price, volumes). We also had to introduce tickerIndex variable in order to later use it within our `For` loop for switching between stock tickers.
+Since Steve wanted to do a little more research for his parents and was gathering data for the entire stock market over the last few years, we needed to refactor the intial code. Since we assumed that there is now an unknown number of stocks, the previous code which had a defined array and looped over a number of stocks is no longer valid. Therefore, first of all we had to initiate a dynamic array `As Variant` type because the final number of stocks was not known, although we did know that ultimately we need to include four variables/dimensions into the array (stock, opening price, closing price, volumes). We also had to introduce tickerIndex variable in order to later use it within our `For` loop for switching between stock tickers.
 ```
    Dim ticker() As Variant
    tickerIndex = 0
@@ -50,6 +50,12 @@ Once initilized, we had to re-dimension the array to create placeholders for the
 ```
 ReDim ticker(4, tickerIndex)
 ```
+We also had to create some starting point in for our `For` loop analysis, i.e., we had to start with some tickername, therefore we assumed the first tickername we are running is in cell A2.
+```
+ticker(1, tickerIndex) = Cells(2, 1).Value
+```
+
+
 
 we had to construct an algorythms which only looped over the number of rows once, performing necessary tests, incrementing the number of stocks as necessary and assigning the appropriate values into the array. In terms on efficiency and number of operations,
 this new algorythm is proportional only to the number of rows in the data set, in this case of test data set 3012 only.
