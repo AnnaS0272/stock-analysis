@@ -52,7 +52,7 @@ Once initialized, I had to re-dimension the array to create placeholders for the
 ```
 ReDim ticker(4, tickerIndex)
 ```
-Rather than having four independant arrays we refactored our code with a single 2-dimensional array with the following indexing.
+Rather than having four independant arrays I refactored the code with a single 2-dimensional array with the following indexing.
 ```
 'ticker(1,tickerIndex) = ticker name
 'ticker(2,tickerIndex) = opening price
