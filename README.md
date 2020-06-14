@@ -82,7 +82,7 @@ For I = 2 To RowCount
     Next I
  ```
 
-The last thing to note, is that I had to introduce a redimensioning within the `Else` part of the loop, when the new ticker is identified via a tickerIndex logic. The redimensioning was important as it would create the new entry. It is needed to `ReDim` and `Preserve` every time there is a new ticker because it's a dynamic array an we don't know how many tickers there are or will be. Without `Preserve` previus data would be lost at every `ReDim`.
+The last thing to note, is that I had to introduce a redimensioning within the `Else` part of the loop, when the new ticker is identified via a tickerIndex logic. The redimensioning was important as it would create the new entry. It is needed to `ReDim` and `Preserve` every time there is a new ticker because it's a dynamic array an we don't know how many tickers there are or will be. Without `Preserve` previous data would be lost at every `ReDim`.
 
 Now Steve is all equipped and ready to go with his All Stock Analysis.
 
