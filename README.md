@@ -64,13 +64,13 @@ I also had to create some starting point in our `For` loop analysis, i.e., I had
 ticker(1, tickerIndex) = Cells(2, 1).Value
 ticker(2, tickerIndex) = Cells(2, 3).Value
 ```
-I then constructed an algorithm which only looped over the number of rows once, performing necessary tests, incrementing the number of stocks via `tickerIndex` as necessary and assigning the appropriate values into the array. In terms of efficiency and number of operations, this new algorithm is proportional only to the number of rows in the data set, in this case of test data, the set is **only 3012 rows.** Compared to the previous version of the code, this refactored version runs 12 times faster.
+I then constructed an algorithm which only looped over the number of rows once, performing necessary tests, incrementing the number of tickers via `tickerIndex` as necessary and assigning the appropriate values into the array. In terms of efficiency and number of operations, this new algorithm is proportional only to the number of rows in the data set, in this case of test data, the set is **only 3012 rows.** Compared to the previous version of the code, this refactored version runs 12 times faster.
 
 ```
 For I = 2 To RowCount
         If ticker(1, tickerIndex) = Cells(I, 1).Value Then
-            ticker(3, tickerIndex) = Cells(I, 6).Value 
-            ticker(4, tickerIndex) = ticker(4, tickerIndex) + Cells(I, 8).Value 
+           ticker(3, tickerIndex) = Cells(I, 6).Value 
+           ticker(4, tickerIndex) = ticker(4, tickerIndex) + Cells(I, 8).Value 
         Else 
             tickerIndex = tickerIndex + 1 
             ReDim Preserve ticker(4, tickerIndex) 
@@ -82,7 +82,7 @@ For I = 2 To RowCount
     Next I
  ```
 
-The last thing to note, is that I had to introduce a redimensioning within the `Else` part of the loop, when the new ticker is identified via a tickerIndex logic. The redimensioning was important as it would create the new entry. It is needed to `ReDim` every time there is a new ticker because it's a dynamic array an we don't know how many tickers there are or will be.
+The last thing to note, is that I had to introduce a redimensioning within the `Else` part of the loop, when the new ticker is identified via a tickerIndex logic. The redimensioning was important as it would create the new entry. It is needed to `ReDim` and `Preserve` every time there is a new ticker because it's a dynamic array an we don't know how many tickers there are or will be. Without `Preserve` previus data would be lost at every `ReDim`.
 
 Now Steve is all equipped and ready to go with his All Stock Analysis.
 
