@@ -59,7 +59,7 @@ Rather than having four independant arrays I refactored the code with a single 2
 'ticker(3,tickerIndex) = closing price
 'ticker(4,tickerIndex) = volume
   ```
-I also had to create some starting point in our `For` loop analysis, i.e., I had to start with an initial tickername and opening price. I assumed the first tickername we are running is in cell A2. the reson we needed to segment the opening price for the first ticker out of the loop, so it doesn't get overwritten as we loop through, which would produce incorrect financial calculations.
+I also had to create some starting point in our `For` loop analysis, i.e., I had to start with an initial tickername and opening price. I assumed the first tickername we are running is in cell A2. The reason I needed to segment the opening price for the first ticker out of the loop, so it doesn't get overwritten as the loop iterates, which would produce incorrect financial calculations.
 ```
 ticker(1, tickerIndex) = Cells(2, 1).Value
 ticker(2, tickerIndex) = Cells(2, 3).Value
