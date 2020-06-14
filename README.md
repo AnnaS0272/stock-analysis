@@ -43,7 +43,7 @@ In terms of efficiency and number of operations, it is proportional to the **"nu
 
 ## Refactoring the code
 
-Since Steve wanted to do a little more research for his parents and was gathering data for the entire stock market over the last few years, we needed to refactor the intial code. Since we assumed that there is now an unknown number of tickers, the previous code which had assumed a number of known tickers is no longer valid. Therefore, first of all we had to initiate a dynamic 2-dimensional array `As Variant` type because the final number of tickers was not known. We did know that ultimately we needed to include four variables into the array (stock, opening price, closing price, volumes). We also had to introduce tickerIndex variable in order to later use it within our `For` loop for switching between stock tickers and outputting to the spreadsheet afterwards.
+Since Steve wanted to do a little more research for his parents and was gathering data for the entire stock market over the last few years, we needed to refactor the intial code. Since we assumed that there is now an unknown number of tickers, the previous code which had assumed a number of known tickers was no longer valid. Therefore, first of all I initiated a dynamic 2-dimensional array `As Variant` type because the final number of tickers was not known. We did know that ultimately we needed to include four variables into the array (stock, opening price, closing price, volumes). We also had to introduce tickerIndex variable in order to later use it within our `For` loop for switching between stock tickers and outputting to the spreadsheet afterwards.
 ```
    Dim ticker() As Variant
    tickerIndex = 0
